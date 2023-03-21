@@ -37,7 +37,14 @@ namespace OpenAiClient
             var chat = api.Chat.CreateConversation();
             chat.AppendUserInput(Request.Text);
             Spinner.Visibility = Visibility.Visible;
-            Result.Text = await chat.GetResponseFromChatbot();
+            try
+            {
+                Result.Text = await chat.GetResponseFromChatbot();
+            }
+            catch
+            {
+                MessageBox.Show("Введите свой apiKey в настройках!");
+            }
             Spinner.Visibility = Visibility.Hidden;
         }
 
