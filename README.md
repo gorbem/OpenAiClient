@@ -1,0 +1,2 @@
+# OpenAiClient
+Клиент для chatGPT
